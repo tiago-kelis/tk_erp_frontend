@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 import {
   ListSubheader,
@@ -179,9 +179,16 @@ const SubMenuWrapper = styled(Box)(
 `
 );
 
+
+
 function SidebarMenu() {
   const { closeSidebar } = useContext(SidebarContext);
+  // Em qualquer componente que seja carregado, como src/content/pages/Auth/Signin.jsx
+  useEffect(() => {
+    console.log('API URL:', process.env.REACT_APP_API_URL);
+  }, []);
 
+  
   return (
     <>
       <MenuWrapper sx={{padding: 2}}>

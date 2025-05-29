@@ -65,28 +65,44 @@ const SignIn = () => {
 
             </Snackbar>
 
-            <MainContent>
-                <Container maxWidth="sm">
-                    <Card sx={{textAlign: "center", mt: 3, p: 4}}>
+            <MainContent sx={{
+                    backgroundImage: "url('background.jpg'), linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6))",
+                    backgroundBlendMode: "overlay",
+                    backgroundColor: "transparent",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center"
+            }}>
+                <Container
+                    maxWidth="sm"
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        
+                    }}
+                    >
+                    <Box component="img" src="Perfil_Login.png" alt="Minha imagem" width={100} height={100} />
+
+                    <Card sx={{ textAlign: "center", mt: 2, p: 3, maxWidth: 400, width: "100%", backgroundColor: "rgba(88, 22, 108, 0.3)" }}>
                         <Stack spacing={3}>
-                            <TextField 
-                                label="Digite seu email"
-                                type="email"
-                                value={emailInput}
-                                onChange={e => setEmailInput(e.target.value)}
-                            />
+                        <TextField
+                            label="Digite seu email"
+                            type="email"
+                            value={emailInput}
+                            onChange={e => setEmailInput(e.target.value)}
+                        />
 
-                            <TextField 
-                                label="Digite sua senha"
-                                type="password"
-                                value={passwordInput}
-                                onChange={e => setPasswordInput(e.target.value)}
-                            />                              
+                        <TextField
+                            label="Digite sua senha"
+                            type="password"
+                            value={passwordInput}
+                            onChange={e => setPasswordInput(e.target.value)}
+                        />
 
-                            <Button onClick={handleSignInBtn} variant="outlined" style={{marginTop: 40}}>
-                                Entrar
-                            </Button>
-
+                        <Button onClick={handleSignInBtn} variant="outlined" sx={{ mt: 5 }}>
+                            Entrar
+                        </Button>
                         </Stack>
                     </Card>
                 </Container>
